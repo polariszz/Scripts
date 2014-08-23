@@ -1,0 +1,21 @@
+#!/bin/bash
+help(){
+    echo "Usage: setProxy [close|address port]"
+    exit
+}
+if [ $# -lt 1 ]; then
+    help 
+    exit
+fi
+
+if [ $1 == "close" ]; then
+    echo "set Proxy back to normal"
+    networksetup -setwebproxystate Wi-Fi off
+    exit
+fi
+
+if [ $# -lt 2 ]; then
+    help
+fi
+echo "Setting Proxy to $1:$2"
+networksetup -setwebproxy Wi-Fi $1 $2

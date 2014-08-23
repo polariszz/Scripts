@@ -1,0 +1,22 @@
+#!/usr/bin/env python2.7
+import os
+import re
+
+regex_ip = '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+'
+ips = re.findall(regex_ip, os.popen('ifconfig').read())
+
+blacklist_regex = [
+    '127.0.0.1',
+    '[0-9]+\.[0-9]+\.[0-9]+\.255',
+    '[0-9]+\.[0-9]+\.[0-9]+\.0'
+]
+
+def fil(ip):
+    for regex in blacklist_regex:
+        if re.match(regex, ip):
+            return False
+    return True
+
+ip = filter(fil, ips)[0]
+
+print ip
