@@ -1,0 +1,13 @@
+# Some useful alias
+
+####################################################################
+# make directory colorful, suggest to add it under ~/.bash_profile #
+####################################################################
+alias l="ls"
+export CLICOLOR=1
+export LSCOLORS=gxfxaxdxcxegedabagacgx
+
+####################################################
+# use this with scrip 'c' in the current directory #
+####################################################
+alias c=". c"
