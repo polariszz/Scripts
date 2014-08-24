@@ -11,3 +11,4 @@ export LSCOLORS=gxfxaxdxcxegedabagacgx
 # use this with scrip 'c' in the current directory #
 ####################################################
 alias c=". c"
+alias md=". md"
