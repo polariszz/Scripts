@@ -5,6 +5,9 @@ import re
 regex_ip = '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+'
 ips = re.findall(regex_ip, os.popen('ifconfig').read())
 
+if len(ips) == 0:
+    exit(0)
+
 blacklist_regex = [
     '127.0.0.1',
     '[0-9]+\.[0-9]+\.[0-9]+\.255',
