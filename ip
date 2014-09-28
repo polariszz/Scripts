@@ -20,6 +20,7 @@ def fil(ip):
             return False
     return True
 
-ip = filter(fil, ips)[0]
 
-print ip
+ip_list = filter(fil, ips)
+if len(ip_list):
+	print ip_list[0]
