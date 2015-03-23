@@ -13,6 +13,6 @@ server.use(function(req, res, next) {
 }); 
 
 port = 8080;
-folder = __dirname + args[0];
+folder = __dirname + '/' + args[0];
 console.log("Serving static foler " + folder + " on port:" + port); 
 server.use(serveStatic(folder)).listen(port);
